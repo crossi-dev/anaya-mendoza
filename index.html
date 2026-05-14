@@ -116,6 +116,15 @@
     flex-shrink: 0;
   }
 
+  /* Mobile: tighten the topbar so brand + CTA fit on one line */
+  @media (max-width: 480px) {
+    .topbar { padding: 16px 18px; }
+    .brand { font-size: 1.0625rem; gap: 8px; }
+    .brand-mark { min-width: 28px; height: 24px; padding: 0 5px; font-size: 0.75rem; }
+    .topbar-cta { padding: 8px 14px; font-size: 0.8125rem; }
+    .topbar-cta svg { display: none; }
+  }
+
   /* ─── Hero ─── */
   .hero {
     position: relative;
@@ -559,7 +568,7 @@
           Hablar por WhatsApp
         </a>
         <a href="#servicios" class="btn btn-secondary">
-          Ver servicios
+          Nuestros servicios
         </a>
       </div>
     </div>
