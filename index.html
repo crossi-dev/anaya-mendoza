@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#3D2C20">
+<meta name="description" content="Constructora en Mendoza — obra nueva, refacciones y ampliaciones. Oficio, presupuesto claro y dirección técnica de principio a fin.">
+<meta property="og:title" content="Anaya · Construcciones en Mendoza">
+<meta property="og:description" content="Construimos tu casa como si fuera nuestra. Obra nueva, refacciones y ampliaciones en Mendoza.">
+<meta property="og:type" content="website">
+<title>Anaya · Construcciones en Mendoza</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --terracota: #B85C3E;
+    --terracota-dark: #8E4327;
+    --arena: #E8D7BE;
+    --arena-soft: #F2E6D2;
+    --crema: #FAF4E8;
+    --vid: #5A6B3D;
+    --vid-soft: #7A8C5A;
+    --piedra: #4A4239;
+    --piedra-soft: #6B6157;
+    --texto-fuerte: #2B231C;
+    --texto-suave: #5B4F44;
+    --linea: rgba(43, 35, 28, 0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: var(--crema);
+    color: var(--texto-fuerte);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ─── Header ─── */
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .brand {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+    color: var(--texto-fuerte);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand-mark {
+    width: 28px;
+    height: 28px;
+    background: var(--terracota);
+    border-radius: 6px;
+    display: grid;
+    place-items: center;
+    color: var(--crema);
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1;
+  }
+
+  .location {
+    font-size: 0.875rem;
+    color: var(--texto-suave);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .location-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--terracota);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  /* ─── Hero ─── */
+  .hero {
+    padding: 40px 0 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .andes {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 900px;
+    height: 120px;
+    opacity: 0.18;
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .eyebrow {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--terracota);
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(2rem, 6vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: var(--texto-fuerte);
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--terracota);
+  }
+
+  .hero-lede {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: var(--texto-suave);
+    max-width: 540px;
+    margin-bottom: 32px;
+  }
+
+  /* ─── Buttons ─── */
+  .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 22px;
+    border-radius: 12px;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: transform 140ms ease, background 140ms ease, box-shadow 140ms ease;
+    cursor: pointer;
+    min-height: 48px;
+  }
+
+  .btn:active { transform: scale(0.98); }
+
+  .btn-primary {
+    background: var(--terracota);
+    color: var(--crema);
+    box-shadow: 0 6px 20px -8px rgba(184, 92, 62, 0.5);
+  }
+
+  .btn-primary:hover {
+    background: var(--terracota-dark);
+    box-shadow: 0 10px 24px -8px rgba(184, 92, 62, 0.55);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--texto-fuerte);
+    border-color: var(--linea);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--terracota);
+    color: var(--terracota);
+  }
+
+  .wpp-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+
+  /* ─── Section title ─── */
+  .section {
+    padding: 56px 0;
+  }
+
+  .section + .section {
+    border-top: 1px solid var(--linea);
+  }
+
+  .section-label {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--terracota);
+    margin-bottom: 14px;
+  }
+
+  h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(1.625rem, 4.5vw, 2.125rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--texto-fuerte);
+    margin-bottom: 14px;
+  }
+
+  .section-lede {
+    font-size: 1rem;
+    color: var(--texto-suave);
+    margin-bottom: 36px;
+    max-width: 520px;
+  }
+
+  /* ─── Services grid ─── */
+  .services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  @media (max-width: 540px) {
+    .services { grid-template-columns: 1fr; }
+  }
+
+  .service {
+    background: var(--arena-soft);
+    border: 1px solid var(--linea);
+    border-radius: 16px;
+    padding: 24px;
+    transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  }
+
+  .service:hover {
+    transform: translateY(-2px);
+    border-color: var(--terracota);
+    box-shadow: 0 12px 28px -16px rgba(43, 35, 28, 0.2);
+  }
+
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--terracota);
+    color: var(--crema);
+    border-radius: 11px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 16px;
+  }
+
+  .service-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .service-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 1.1875rem;
+    margin-bottom: 6px;
+    color: var(--texto-fuerte);
+  }
+
+  .service-body {
+    font-size: 0.9375rem;
+    color: var(--texto-suave);
+    line-height: 1.5;
+  }
+
+  /* ─── Process ─── */
+  .process-list {
+    list-style: none;
+    counter-reset: step;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .process-item {
+    counter-increment: step;
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .process-item::before {
+    content: counter(step, decimal-leading-zero);
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--terracota);
+    line-height: 1;
+    padding-top: 2px;
+  }
+
+  .process-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 1.125rem;
+    margin-bottom: 4px;
+    color: var(--texto-fuerte);
+  }
+
+  .process-body {
+    font-size: 0.9375rem;
+    color: var(--texto-suave);
+    line-height: 1.55;
+  }
+
+  /* ─── Trust strip ─── */
+  .trust {
+    background: var(--piedra);
+    color: var(--arena);
+    padding: 40px 0;
+    margin: 0 -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 540px) {
+    .trust-grid { grid-template-columns: 1fr; gap: 24px; }
+  }
+
+  .trust-stat {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 2.25rem;
+    line-height: 1;
+    color: var(--crema);
+    margin-bottom: 6px;
+  }
+
+  .trust-label {
+    font-size: 0.875rem;
+    opacity: 0.85;
+  }
+
+  /* ─── CTA final ─── */
+  .cta-final {
+    text-align: center;
+    background: var(--arena);
+    padding: 56px 24px;
+    border-radius: 24px;
+    margin: 0 0 56px;
+  }
+
+  .cta-final h2 {
+    margin-bottom: 12px;
+  }
+
+  .cta-final p {
+    color: var(--texto-suave);
+    font-size: 1rem;
+    margin-bottom: 28px;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-final .btn {
+    font-size: 1.0625rem;
+    padding: 16px 28px;
+  }
+
+  /* ─── Footer ─── */
+  footer {
+    padding: 32px 0 48px;
+    text-align: center;
+    border-top: 1px solid var(--linea);
+  }
+
+  .footer-brand {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--texto-fuerte);
+    margin-bottom: 6px;
+  }
+
+  .footer-note {
+    font-size: 0.8125rem;
+    color: var(--texto-suave);
+  }
+
+  .footer-wpp {
+    color: var(--terracota);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .footer-wpp:hover {
+    text-decoration: underline;
+  }
+
+  /* ─── Sticky WhatsApp FAB (mobile) ─── */
+  .fab {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: #FFFFFF;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 8px 24px -6px rgba(37, 211, 102, 0.6);
+    text-decoration: none;
+    z-index: 50;
+    transition: transform 140ms ease;
+  }
+
+  .fab:hover {
+    transform: scale(1.06);
+  }
+
+  .fab svg {
+    width: 30px;
+    height: 30px;
+    fill: currentColor;
+  }
+
+  @media (min-width: 720px) {
+    .fab { display: none; }
+  }
+
+  /* ─── Reduced motion ─── */
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- WhatsApp message template -->
+<!-- número: +54 9 261 233 9930 → wa.me/5492612339930 -->
+
+<header class="topbar">
+  <a href="#" class="brand">
+    <span class="brand-mark">A</span>
+    <span>Anaya</span>
+  </a>
+  <span class="location">
+    <span class="location-dot"></span>
+    Mendoza
+  </span>
+</header>
+
+<main>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero">
+    <svg class="andes" viewBox="0 0 900 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,120 L0,80 L80,40 L140,70 L220,20 L300,55 L380,15 L460,50 L540,25 L620,65 L700,30 L780,60 L860,35 L900,55 L900,120 Z" fill="#5A6B3D" opacity="0.4"/>
+      <path d="M0,120 L0,90 L60,70 L140,95 L220,60 L300,80 L380,55 L460,75 L540,50 L620,80 L700,60 L780,85 L860,65 L900,80 L900,120 Z" fill="#B85C3E" opacity="0.3"/>
+    </svg>
+
+    <div class="wrap hero-content">
+      <p class="eyebrow">Construcción · Mendoza</p>
+      <h1>Construimos tu casa como si <em>fuera nuestra</em>.</h1>
+      <p class="hero-lede">Obra nueva, refacciones y ampliaciones en Mendoza. Oficio de barrio, presupuesto claro y dirección técnica de principio a fin.</p>
+      <div class="btn-row">
+        <a href="https://wa.me/5492612339930?text=Hola%2C%20me%20interesa%20consultar%20por%20una%20obra." class="btn btn-primary" target="_blank" rel="noopener">
+          <svg class="wpp-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.7-1.6-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5 0 1.5 1.1 2.9 1.3 3.1.2.2 2.2 3.4 5.4 4.7.7.3 1.3.5 1.8.7.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/>
+            <path d="M20.5 3.5C18.3 1.3 15.3 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.7 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.3-1.3-6.3-3.5-8.4zM12 22c-1.8 0-3.6-.5-5.2-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.6 15.7 2 13.9 2 12 2 6.5 6.5 2 12 2c2.7 0 5.2 1 7.1 2.9 1.9 1.9 2.9 4.4 2.9 7.1 0 5.5-4.5 10-10 10z"/>
+          </svg>
+          Hablar por WhatsApp
+        </a>
+        <a href="#servicios" class="btn btn-secondary">
+          Ver servicios
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SERVICIOS ─── -->
+  <section class="section" id="servicios">
+    <div class="wrap">
+      <p class="section-label">Qué hacemos</p>
+      <h2>Construcción a medida, de principio a fin.</h2>
+      <p class="section-lede">Trabajamos con familias, comerciantes y profesionales que quieren una obra bien hecha, sin sorpresas en el camino.</p>
+
+      <div class="services">
+        <article class="service">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-7h6v7"/>
+            </svg>
+          </div>
+          <h3 class="service-title">Obra nueva</h3>
+          <p class="service-body">Viviendas unifamiliares y locales comerciales desde los planos hasta la entrega de llaves.</p>
+        </article>
+
+        <article class="service">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14.7 6.3l3 3M3 21l4-1 11-11-3-3L4 17l-1 4zM18 6l3-3 3 3-3 3-3-3z"/>
+            </svg>
+          </div>
+          <h3 class="service-title">Refacciones</h3>
+          <p class="service-body">Cocinas, baños, pisos, techos y revoques. Renovamos espacios sin desarmar tu vida.</p>
+        </article>
+
+        <article class="service">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 12h7V5H3v7zM14 19h7v-7h-7v7zM3 19h7v-4H3v4zM14 12h7V5h-7v7z"/>
+            </svg>
+          </div>
+          <h3 class="service-title">Ampliaciones</h3>
+          <p class="service-body">Sumamos metros donde los necesitás — un cuarto, una galería, un local en el frente.</p>
+        </article>
+
+        <article class="service">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+            </svg>
+          </div>
+          <h3 class="service-title">Dirección técnica</h3>
+          <p class="service-body">Te acompañamos en la planificación, los permisos municipales y el seguimiento de la obra.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROCESO ─── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="section-label">Cómo trabajamos</p>
+      <h2>Tres pasos, sin vueltas.</h2>
+
+      <ol class="process-list">
+        <li class="process-item">
+          <div>
+            <h3 class="process-title">Visita y charla</h3>
+            <p class="process-body">Vamos al lugar, escuchamos qué necesitás y miramos qué se puede hacer. Sin compromiso.</p>
+          </div>
+        </li>
+        <li class="process-item">
+          <div>
+            <h3 class="process-title">Presupuesto claro</h3>
+            <p class="process-body">Te entregamos un presupuesto detallado por escrito — materiales, mano de obra y plazos. Lo que te decimos es lo que pagás.</p>
+          </div>
+        </li>
+        <li class="process-item">
+          <div>
+            <h3 class="process-title">Obra y entrega</h3>
+            <p class="process-body">Arrancamos la obra con cronograma firmado, te mantenemos al tanto cada semana y entregamos cuando dijimos.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ─── TRUST ─── -->
+  <section class="trust">
+    <div class="trust-grid">
+      <div>
+        <p class="trust-stat">+15</p>
+        <p class="trust-label">años de oficio</p>
+      </div>
+      <div>
+        <p class="trust-stat">+80</p>
+        <p class="trust-label">obras entregadas</p>
+      </div>
+      <div>
+        <p class="trust-stat">100%</p>
+        <p class="trust-label">presupuesto cerrado</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA FINAL ─── -->
+  <section class="section">
+    <div class="wrap">
+      <div class="cta-final">
+        <h2>¿Tenés una obra en mente?</h2>
+        <p>Contanos por WhatsApp qué querés hacer. Te respondemos el mismo día con una primera estimación.</p>
+        <a href="https://wa.me/5492612339930?text=Hola%2C%20me%20interesa%20consultar%20por%20una%20obra." class="btn btn-primary" target="_blank" rel="noopener">
+          <svg class="wpp-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.7-1.6-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5 0 1.5 1.1 2.9 1.3 3.1.2.2 2.2 3.4 5.4 4.7.7.3 1.3.5 1.8.7.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/>
+            <path d="M20.5 3.5C18.3 1.3 15.3 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.7 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.3-1.3-6.3-3.5-8.4zM12 22c-1.8 0-3.6-.5-5.2-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.6 15.7 2 13.9 2 12 2 6.5 6.5 2 12 2c2.7 0 5.2 1 7.1 2.9 1.9 1.9 2.9 4.4 2.9 7.1 0 5.5-4.5 10-10 10z"/>
+          </svg>
+          Hablar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="footer-brand">Anaya · Construcciones</p>
+    <p class="footer-note">
+      Mendoza, Argentina ·
+      <a href="https://wa.me/5492612339930" class="footer-wpp" target="_blank" rel="noopener">+54 9 261 233 9930</a>
+    </p>
+  </div>
+</footer>
+
+<!-- WhatsApp FAB (mobile only) -->
+<a href="https://wa.me/5492612339930?text=Hola%2C%20me%20interesa%20consultar%20por%20una%20obra." class="fab" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.7-1.6-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5 0 1.5 1.1 2.9 1.3 3.1.2.2 2.2 3.4 5.4 4.7.7.3 1.3.5 1.8.7.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/>
+    <path d="M20.5 3.5C18.3 1.3 15.3 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.7 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.3-1.3-6.3-3.5-8.4zM12 22c-1.8 0-3.6-.5-5.2-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.6 15.7 2 13.9 2 12 2 6.5 6.5 2 12 2c2.7 0 5.2 1 7.1 2.9 1.9 1.9 2.9 4.4 2.9 7.1 0 5.5-4.5 10-10 10z"/>
+  </svg>
+</a>
+
+</body>
+</html>
