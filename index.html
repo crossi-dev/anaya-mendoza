@@ -199,11 +199,15 @@
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+    /* Both axes pinned to start — prevents flexbox from stretching items
+       vertically when they wrap to multiple lines (the bug we hit on mobile
+       where the WhatsApp button became 600px tall). */
+    align-items: flex-start;
+    align-content: flex-start;
   }
 
   .btn-row .btn {
-    flex: 1 1 220px;
-    min-width: 0;
+    flex: 0 0 auto;
   }
 
   .btn {
@@ -239,7 +243,9 @@
   .btn-secondary {
     background: transparent;
     color: var(--texto-fuerte);
-    border-color: var(--linea);
+    /* Stronger border so the outline button is visible against the cream bg
+       on mobile, where the previous --linea (0.12 alpha) was too faint. */
+    border-color: rgba(43, 35, 28, 0.3);
   }
 
   .btn-secondary:hover {
