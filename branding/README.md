@@ -12,7 +12,8 @@ Materiales para producir folletos, cartelería y comunicación impresa.
 | `whatsapp-avatar.svg` | Avatar 640×640 para foto de perfil de WhatsApp (versión vectorial). |
 | `whatsapp-avatar.png` | Avatar 640×640 PNG — **este es el que subís a WhatsApp** (WA no acepta SVG). |
 | `paleta.html` / `paleta.pdf` | Guía visual de marca — paleta, tipografías, voz, reglas de uso. |
-| `folleto-A4.html` / `folleto-A4.pdf` | Folleto bicara A4 listo para imprimir. Llevá el PDF a la imprenta. |
+| `folleto-A4.html` / `folleto-A4.pdf` ⭐ | **Folleto 1 cara A4, sin foto, silueta vectorial.** Pensado para imprimir económico (2 tintas, papel offset). Llevá este PDF. |
+| `folleto-A4-bicara.html` / `folleto-A4-bicara.pdf` | Versión bicara con foto del Aconcagua (más caro de imprimir — full color, 2 caras). Usá si querés tier premium. |
 
 ## Subir el avatar a WhatsApp Business
 
@@ -33,12 +34,18 @@ Materiales para producir folletos, cartelería y comunicación impresa.
 
 ## Especificaciones de impresión
 
+### Folleto simple (`folleto-A4.pdf`) — recomendado para volúmenes altos
+
 - **Formato**: A4 (210 × 297 mm)
-- **Caras**: 2 (frente y dorso)
-- **Gramaje sugerido**: 200-250 g/m² (folleto que se sostiene en la mano)
-- **Terminación**: papel mate (más prolijo, menos brillo barato)
-- **Sangrado**: 0 (el diseño no llega al borde — hay márgenes de seguridad)
-- **Color**: 4/4 (color en ambas caras)
+- **Caras**: 1 (frente solo, dorso en blanco)
+- **Gramaje sugerido**: 120-150 g/m² (alcanza, no necesita más por ser 1 cara)
+- **Terminación**: papel offset o crema; no hace falta couché
+- **Color**: 2 tintas (terracota + texto oscuro) — pedile a la imprenta "2 colores Pantone" si querés bajar más el costo, o 4/0 estándar si es más rápido
+- **Sangrado**: 0 (márgenes de seguridad incluidos en el diseño)
+
+### Folleto bicara (`folleto-A4-bicara.pdf`) — tier premium
+
+- A4 bicara, 4/4 color, 200-250 g/m² papel mate. Incluye foto del Aconcagua.
 
 ## Tipografías
 

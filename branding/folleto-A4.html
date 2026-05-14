@@ -2,28 +2,22 @@
 <html lang="es-AR">
 <head>
 <meta charset="UTF-8">
-<title>Folleto Constructora Cuyo · A4 print-ready</title>
+<title>Folleto Constructora Cuyo · A4 simple · 1 cara</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-  /* Print spec: A4 (210 × 297 mm), bicara, márgenes 12mm de seguridad.
-     Para enviar a imprenta: abrir en Chrome → Ctrl+P → "Guardar como PDF" →
-     escala 100%, sin márgenes adicionales del navegador, fondos sí. */
+  /* Print spec: A4 (210 × 297 mm), una sola cara, sin foto, 2 tintas.
+     Pensado para imprimir económicamente — terracota + texto oscuro sobre
+     papel crema u offset blanco. Sin sangrado: márgenes de seguridad 14mm. */
 
-  @page {
-    size: A4;
-    margin: 0;
-  }
+  @page { size: A4; margin: 0; }
 
   :root {
     --terracota: #B85C3E;
-    --terracota-dark: #8E4327;
     --arena: #E8D7BE;
-    --arena-soft: #F2E6D2;
     --crema: #FAF4E8;
-    --vid: #5A6B3D;
     --piedra: #4A4239;
     --texto-fuerte: #2B231C;
     --texto-suave: #5B4F44;
@@ -44,50 +38,42 @@
     background: var(--crema);
     margin: 12mm auto;
     box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-    page-break-after: always;
     position: relative;
-    overflow: hidden;
+    padding: 16mm 18mm;
+    display: flex;
+    flex-direction: column;
   }
-
-  .page:last-child { page-break-after: auto; }
 
   @media print {
     body { background: none; }
     .page { margin: 0; box-shadow: none; }
   }
 
-  /* ─── CARA 1 — Tapa con foto Aconcagua ─── */
-  .cover-photo {
-    height: 165mm;
-    background: linear-gradient(
-      to bottom,
-      rgba(43, 35, 28, 0.05) 0%,
-      rgba(43, 35, 28, 0.4) 60%,
-      rgba(43, 35, 28, 0.82) 100%
-    ),
-    url('../img/cordillera.jpg') center/cover no-repeat;
-    color: var(--crema);
-    padding: 14mm 16mm;
+  /* ─── Top — brand + silueta cordillera ─── */
+  .top {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.3mm solid rgba(43, 35, 28, 0.15);
+    padding-bottom: 7mm;
+    margin-bottom: 8mm;
   }
 
-  .cover-brand {
+  .brand {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 4mm;
     font-family: 'Fraunces', Georgia, serif;
     font-weight: 600;
-    font-size: 16pt;
+    font-size: 18pt;
     letter-spacing: -0.01em;
-    color: var(--crema);
+    color: var(--texto-fuerte);
   }
 
-  .cover-mono {
-    min-width: 11mm;
-    height: 10mm;
-    padding: 0 2.5mm;
+  .brand-mono {
+    min-width: 12mm;
+    height: 11mm;
+    padding: 0 3mm;
     background: var(--terracota);
     border-radius: 2mm;
     display: grid;
@@ -98,189 +84,114 @@
     letter-spacing: 0.04em;
   }
 
-  .cover-headline {
-    max-width: 130mm;
-  }
-
-  .cover-eyebrow {
+  .location {
     font-size: 9pt;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: var(--arena);
-    margin-bottom: 6mm;
-  }
-
-  .cover-headline h1 {
-    font-family: 'Fraunces', Georgia, serif;
-    font-weight: 500;
-    font-size: 36pt;
-    line-height: 1.05;
-    letter-spacing: -0.015em;
-    color: var(--crema);
-    margin-bottom: 6mm;
-    text-shadow: 0 1mm 4mm rgba(0,0,0,0.3);
-  }
-
-  .cover-headline h1 em {
-    font-style: italic;
-    color: #F5C9A8;
-  }
-
-  .cover-lede {
-    font-size: 12pt;
-    line-height: 1.5;
-    color: var(--arena-soft);
-    max-width: 110mm;
-  }
-
-  /* Tapa — banda inferior con WhatsApp */
-  .cover-cta {
-    height: 132mm;
-    padding: 12mm 16mm;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 8mm;
-  }
-
-  .cover-cta h2 {
-    font-family: 'Fraunces', Georgia, serif;
-    font-weight: 500;
-    font-size: 24pt;
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-    color: var(--texto-fuerte);
-    max-width: 150mm;
-  }
-
-  .cover-cta h2 em {
-    font-style: italic;
-    color: var(--terracota);
-  }
-
-  .cover-cta p {
-    font-size: 11pt;
     color: var(--texto-suave);
-    max-width: 145mm;
-  }
-
-  .wpp-button {
-    background: var(--terracota);
-    color: var(--crema);
-    padding: 4mm 7mm;
-    border-radius: 3mm;
-    font-weight: 500;
-    font-size: 13pt;
     display: inline-flex;
     align-items: center;
-    gap: 3mm;
+    gap: 2mm;
   }
 
-  .wpp-button .ico {
-    width: 5mm;
-    height: 5mm;
-    background: currentColor;
-    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M20.5 3.5C18.3 1.3 15.3 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.7 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.3-1.3-6.3-3.5-8.4z'/></svg>") no-repeat center/contain;
-    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M20.5 3.5C18.3 1.3 15.3 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.7 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.3-1.3-6.3-3.5-8.4z'/></svg>") no-repeat center/contain;
+  .location-dot {
+    width: 2mm;
+    height: 2mm;
+    background: var(--terracota);
+    border-radius: 50%;
   }
 
-  .cover-contact {
-    font-size: 10pt;
-    color: var(--texto-suave);
-    margin-top: 2mm;
+  /* ─── Silueta cordillera (icono vectorial) ─── */
+  .cordillera {
+    width: 100%;
+    height: 30mm;
+    margin-bottom: 8mm;
+    display: block;
   }
 
-  .cover-contact strong {
-    color: var(--texto-fuerte);
-    font-weight: 500;
+  /* ─── Hero copy ─── */
+  .hero {
+    margin-bottom: 10mm;
   }
 
-  /* ─── CARA 2 — Servicios + proceso + trust ─── */
-  .back {
-    padding: 14mm 16mm;
-    display: flex;
-    flex-direction: column;
-    gap: 8mm;
-  }
-
-  .back-header {
-    border-bottom: 0.5mm solid rgba(43, 35, 28, 0.15);
-    padding-bottom: 6mm;
-    margin-bottom: 2mm;
-  }
-
-  .back-label {
+  .eyebrow {
     font-size: 9pt;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.18em;
     color: var(--terracota);
-    margin-bottom: 3mm;
+    margin-bottom: 4mm;
   }
 
-  .back-header h2 {
+  h1 {
     font-family: 'Fraunces', Georgia, serif;
     font-weight: 500;
-    font-size: 22pt;
-    line-height: 1.1;
+    font-size: 32pt;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
     color: var(--texto-fuerte);
+    margin-bottom: 5mm;
+    max-width: 165mm;
   }
 
-  /* Servicios grid */
-  .services-print {
+  h1 em {
+    font-style: italic;
+    color: var(--terracota);
+  }
+
+  .lede {
+    font-size: 11pt;
+    line-height: 1.5;
+    color: var(--texto-suave);
+    max-width: 160mm;
+  }
+
+  /* ─── Servicios — 3 columnas ─── */
+  .services {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 4mm;
+    gap: 5mm;
+    margin-bottom: 9mm;
   }
 
-  .service-print {
-    background: var(--arena-soft);
-    border-radius: 3mm;
-    padding: 6mm 5mm;
+  .service {
+    border-left: 0.8mm solid var(--terracota);
+    padding-left: 4mm;
   }
 
-  .service-print-title {
+  .service-title {
     font-family: 'Fraunces', Georgia, serif;
     font-weight: 500;
     font-size: 13pt;
-    margin-bottom: 2mm;
     color: var(--texto-fuerte);
+    margin-bottom: 2mm;
   }
 
-  .service-print-body {
+  .service-body {
     font-size: 9pt;
     color: var(--texto-suave);
     line-height: 1.45;
   }
 
-  /* Proceso */
-  .process-print {
+  /* ─── Proceso compacto ─── */
+  .process {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 4mm;
+    gap: 5mm;
+    margin-bottom: 9mm;
   }
 
-  .step {
-    border-left: 0.8mm solid var(--terracota);
-    padding-left: 4mm;
-  }
-
-  .step-number {
+  .step-meta {
     font-family: 'Fraunces', Georgia, serif;
     font-style: italic;
     font-weight: 500;
-    font-size: 14pt;
+    font-size: 11pt;
     color: var(--terracota);
-    line-height: 1;
-    margin-bottom: 2mm;
+    margin-bottom: 1mm;
   }
 
   .step-title {
     font-family: 'Fraunces', Georgia, serif;
     font-weight: 500;
-    font-size: 12pt;
+    font-size: 11pt;
     color: var(--texto-fuerte);
     margin-bottom: 1mm;
   }
@@ -291,161 +202,185 @@
     line-height: 1.4;
   }
 
-  /* Trust strip */
-  .trust-print {
-    background: var(--piedra);
-    color: var(--arena);
+  /* ─── CTA WhatsApp + contacto al pie ─── */
+  .cta-block {
+    background: var(--terracota);
+    color: var(--crema);
     border-radius: 3mm;
-    padding: 7mm 6mm;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4mm;
-    text-align: center;
+    padding: 8mm 7mm;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6mm;
   }
 
-  .trust-print-stat {
+  .cta-text h2 {
     font-family: 'Fraunces', Georgia, serif;
     font-weight: 500;
+    font-size: 16pt;
+    line-height: 1.1;
+    margin-bottom: 2mm;
+  }
+
+  .cta-text p {
+    font-size: 10pt;
+    opacity: 0.92;
+  }
+
+  .cta-number {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
     font-size: 22pt;
-    color: var(--crema);
+    letter-spacing: -0.01em;
+    text-align: right;
+    line-height: 1.05;
+    white-space: nowrap;
+  }
+
+  .cta-number-label {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 8pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 1mm;
+  }
+
+  /* Trust strip discreta arriba del CTA */
+  .trust-line {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    border-top: 0.3mm solid rgba(43, 35, 28, 0.15);
+    border-bottom: 0.3mm solid rgba(43, 35, 28, 0.15);
+    padding: 5mm 0;
+    margin-bottom: 7mm;
+  }
+
+  .trust-item-stat {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 16pt;
+    color: var(--terracota);
     line-height: 1;
     margin-bottom: 1mm;
   }
 
-  .trust-print-label {
-    font-size: 8.5pt;
-    opacity: 0.85;
-  }
-
-  /* Footer contact */
-  .back-footer {
-    background: var(--arena);
-    border-radius: 3mm;
-    padding: 7mm 6mm;
-    text-align: center;
-    margin-top: auto;
-  }
-
-  .back-footer-headline {
-    font-family: 'Fraunces', Georgia, serif;
-    font-weight: 500;
-    font-size: 16pt;
-    color: var(--texto-fuerte);
-    margin-bottom: 2mm;
-  }
-
-  .back-footer-wpp {
-    font-family: 'Fraunces', Georgia, serif;
-    font-weight: 500;
-    font-size: 18pt;
-    color: var(--terracota);
-    margin: 2mm 0;
-  }
-
-  .back-footer-detail {
-    font-size: 9pt;
+  .trust-item-label {
+    font-size: 8pt;
     color: var(--texto-suave);
+    letter-spacing: 0.04em;
   }
-
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════ CARA 1 ═══════════════════ -->
 <div class="page">
-  <div class="cover-photo">
-    <div class="cover-brand">
-      <span class="cover-mono">CC</span>
+
+  <!-- ─── Header ─── -->
+  <header class="top">
+    <div class="brand">
+      <span class="brand-mono">CC</span>
       <span>Constructora Cuyo</span>
     </div>
+    <span class="location">
+      <span class="location-dot"></span>
+      Mendoza
+    </span>
+  </header>
 
-    <div class="cover-headline">
-      <p class="cover-eyebrow">Construcción en seco · Mendoza</p>
-      <h1>Construcción en seco, reparaciones y <em>mantenimiento</em>.</h1>
-      <p class="cover-lede">Atendemos toda Mendoza. Presupuesto cerrado, trabajos prolijos y plazos que cumplimos. Sin vueltas.</p>
+  <!-- ─── Silueta cordillera (vectorial — sin foto) ─── -->
+  <svg class="cordillera" viewBox="0 0 600 90" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+    <!-- Capa de fondo: cordillera lejana, terracota tenue -->
+    <path d="M0,90 L0,68 L40,52 L75,60 L110,45 L150,55 L185,40 L225,52 L265,38 L305,50 L345,32 L385,46 L425,40 L465,55 L505,42 L545,58 L585,46 L600,52 L600,90 Z"
+          fill="#B85C3E" opacity="0.25"/>
+
+    <!-- Capa intermedia: cordillera media, terracota oscuro -->
+    <path d="M0,90 L0,75 L35,62 L70,72 L120,48 L165,68 L210,45 L260,62 L300,42 L350,56 L390,38 L440,52 L490,46 L540,64 L590,52 L600,58 L600,90 Z"
+          fill="#B85C3E" opacity="0.5"/>
+
+    <!-- Capa frontal: picos cercanos con detalle del pico principal (Aconcagua-style) -->
+    <path d="M0,90 L0,82 L30,72 L65,80 L100,68 L140,76 L180,58 L210,42 L235,28 L260,44 L290,55 L325,65 L365,55 L405,72 L445,60 L485,75 L525,65 L565,78 L600,70 L600,90 Z"
+          fill="#B85C3E"/>
+
+    <!-- Detalles de nieve sobre el pico principal (líneas blancas tenues, simulando picos nevados — sigue siendo barato de imprimir) -->
+    <path d="M218,42 L235,28 L252,42 L246,40 L235,32 L226,40 Z"
+          fill="#FAF4E8" opacity="0.85"/>
+  </svg>
+
+  <!-- ─── Hero ─── -->
+  <section class="hero">
+    <p class="eyebrow">Construcción en seco · Mendoza</p>
+    <h1>Construcción en seco, reparaciones y <em>mantenimiento</em>.</h1>
+    <p class="lede">Atendemos toda Mendoza. Presupuesto cerrado, trabajos prolijos y plazos que cumplimos. Sin vueltas.</p>
+  </section>
+
+  <!-- ─── Servicios ─── -->
+  <section class="services">
+    <article class="service">
+      <h3 class="service-title">Construcción en seco</h3>
+      <p class="service-body">Steel framing, durlock, cielorrasos y divisiones. Más rápido, sin polvo y con menos lío que la obra húmeda.</p>
+    </article>
+    <article class="service">
+      <h3 class="service-title">Reparaciones</h3>
+      <p class="service-body">Filtraciones, fisuras, humedades, techos y goteras. Atendemos urgencias en el día.</p>
+    </article>
+    <article class="service">
+      <h3 class="service-title">Mantenimiento</h3>
+      <p class="service-body">Pintura, plomería, electricidad menor y herrería. Lo que tu casa o local necesite.</p>
+    </article>
+  </section>
+
+  <!-- ─── Proceso 3 pasos ─── -->
+  <section class="process">
+    <div>
+      <p class="step-meta">01</p>
+      <p class="step-title">Vamos a verlo</p>
+      <p class="step-body">Pasamos por el lugar, miramos qué necesitás y te decimos qué hacemos. Visita sin cargo.</p>
     </div>
-  </div>
-
-  <div class="cover-cta">
-    <h2>¿Tenés un trabajo <em>en mente</em>?</h2>
-    <p>Contanos por WhatsApp qué necesitás. Te respondemos el mismo día con una primera estimación.</p>
-    <div class="wpp-button">
-      <span class="ico"></span>
-      WhatsApp +54 9 261 233 9930
+    <div>
+      <p class="step-meta">02</p>
+      <p class="step-title">Presupuesto cerrado</p>
+      <p class="step-body">Por escrito: materiales, mano de obra y plazos. Lo que decimos es lo que pagás.</p>
     </div>
-    <p class="cover-contact">
-      <strong>Constructora Cuyo</strong> · Mendoza, Argentina
-    </p>
-  </div>
-</div>
-
-<!-- ═══════════════════ CARA 2 ═══════════════════ -->
-<div class="page">
-  <div class="back">
-    <header class="back-header">
-      <p class="back-label">Qué hacemos</p>
-      <h2>Tres rubros, hechos prolijos.</h2>
-    </header>
-
-    <div class="services-print">
-      <article class="service-print">
-        <h3 class="service-print-title">Construcción en seco</h3>
-        <p class="service-print-body">Steel framing, durlock, cielorrasos y divisiones. Más rápido, sin polvo y con menos lío que la obra húmeda.</p>
-      </article>
-      <article class="service-print">
-        <h3 class="service-print-title">Reparaciones</h3>
-        <p class="service-print-body">Filtraciones, fisuras, humedades, techos y goteras. Atendemos urgencias en el día.</p>
-      </article>
-      <article class="service-print">
-        <h3 class="service-print-title">Mantenimiento</h3>
-        <p class="service-print-body">Pintura, plomería, electricidad menor y herrería. Lo que tu casa o local necesite, lo dejamos andando.</p>
-      </article>
+    <div>
+      <p class="step-meta">03</p>
+      <p class="step-title">Arrancamos y entregamos</p>
+      <p class="step-body">Cronograma firmado, novedades cada semana y entrega en la fecha pactada.</p>
     </div>
+  </section>
 
-    <header class="back-header" style="margin-top: 4mm;">
-      <p class="back-label">Cómo trabajamos</p>
-      <h2>Tres pasos, sin vueltas.</h2>
-    </header>
-
-    <div class="process-print">
-      <div class="step">
-        <p class="step-number">01</p>
-        <p class="step-title">Vamos a verlo</p>
-        <p class="step-body">Pasamos por el lugar, miramos qué necesitás y te decimos qué hacemos. Visita sin cargo.</p>
-      </div>
-      <div class="step">
-        <p class="step-number">02</p>
-        <p class="step-title">Presupuesto cerrado</p>
-        <p class="step-body">Por escrito: materiales, mano de obra y plazos. Lo que decimos es lo que pagás.</p>
-      </div>
-      <div class="step">
-        <p class="step-number">03</p>
-        <p class="step-title">Arrancamos y entregamos</p>
-        <p class="step-body">Cronograma firmado, novedades cada semana y entrega en la fecha pactada.</p>
-      </div>
+  <!-- ─── Trust line ─── -->
+  <section class="trust-line">
+    <div>
+      <p class="trust-item-stat">+15</p>
+      <p class="trust-item-label">años de oficio</p>
     </div>
-
-    <div class="trust-print">
-      <div>
-        <p class="trust-print-stat">+15</p>
-        <p class="trust-print-label">años de oficio</p>
-      </div>
-      <div>
-        <p class="trust-print-stat">+200</p>
-        <p class="trust-print-label">trabajos hechos</p>
-      </div>
-      <div>
-        <p class="trust-print-stat">100%</p>
-        <p class="trust-print-label">presupuesto cerrado</p>
-      </div>
+    <div>
+      <p class="trust-item-stat">+200</p>
+      <p class="trust-item-label">trabajos hechos</p>
     </div>
-
-    <div class="back-footer">
-      <p class="back-footer-headline">Te respondemos hoy mismo</p>
-      <p class="back-footer-wpp">+54 9 261 233 9930</p>
-      <p class="back-footer-detail">Constructora Cuyo · Mendoza, Argentina</p>
+    <div>
+      <p class="trust-item-stat">100%</p>
+      <p class="trust-item-label">presupuesto cerrado</p>
     </div>
-  </div>
+  </section>
+
+  <!-- ─── CTA WhatsApp ─── -->
+  <section class="cta-block">
+    <div class="cta-text">
+      <h2>¿Tenés un trabajo en mente?</h2>
+      <p>Mandanos un WhatsApp y te respondemos hoy mismo con una primera estimación.</p>
+    </div>
+    <div class="cta-number">
+      <span class="cta-number-label">WhatsApp</span>
+      +54 9 261 233 9930
+    </div>
+  </section>
+
 </div>
 
 </body>
