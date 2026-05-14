@@ -121,13 +121,17 @@
     flex-shrink: 0;
   }
 
-  /* Mobile: tighten the topbar so brand + CTA fit on one line */
+  /* Mobile: tighten the topbar so brand + CTA fit on one line,
+     and stack hero CTAs vertically so they don't get clipped. */
   @media (max-width: 480px) {
     .topbar { padding: 14px 18px; }
     .brand { font-size: 1.0625rem; gap: 9px; letter-spacing: -0.02em; }
     .brand-mark { min-width: 32px; height: 28px; padding: 0 6px; font-size: 0.8125rem; border-radius: 7px; }
     .topbar-cta { padding: 8px 14px; font-size: 0.8125rem; gap: 0; }
     .topbar-cta svg { display: none; }
+
+    .btn-row { flex-direction: column; align-items: stretch; gap: 10px; }
+    .btn-row .btn { width: 100%; padding: 14px 18px; }
   }
 
   /* ─── Hero ─── */
