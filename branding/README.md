@@ -1,4 +1,4 @@
-# Alto Cuyo · Paquete de marca
+# Constructora Cuyo · Paquete de marca
 
 Materiales para producir folletos, cartelería y comunicación impresa.
 
