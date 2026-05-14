@@ -106,24 +106,11 @@
   .hero {
     position: relative;
     overflow: hidden;
-    min-height: 540px;
-    display: flex;
-    align-items: flex-end;
-    color: var(--crema);
-    /* Background photo of the Andes, with a gradient overlay so the text
-       stays legible. The overlay graduates from translucent at the top
-       (lets the peaks breathe) to dark terracota at the bottom (where the
-       copy sits). */
-    background:
-      linear-gradient(
-        to bottom,
-        rgba(43, 35, 28, 0.15) 0%,
-        rgba(43, 35, 28, 0.55) 55%,
-        rgba(43, 35, 28, 0.85) 100%
-      ),
-      url('img/cordillera.jpg') center/cover no-repeat;
+    padding: 48px 0 72px;
     margin: 0 -24px;
-    padding: 80px 24px 56px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background: var(--crema);
   }
 
   .hero-content {
@@ -134,38 +121,46 @@
     margin: 0 auto;
   }
 
+  /* Silueta vectorial — misma del folleto. Sin foto: liviano, escala perfecta. */
+  .cordillera-svg {
+    display: block;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto 40px;
+    height: clamp(80px, 14vw, 120px);
+  }
+
   .eyebrow {
     font-size: 0.8125rem;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: var(--arena);
-    margin-bottom: 20px;
+    letter-spacing: 0.2em;
+    color: var(--terracota);
+    margin-bottom: 18px;
   }
 
   h1 {
     font-family: 'Fraunces', Georgia, serif;
     font-weight: 500;
-    font-size: clamp(2rem, 6.5vw, 3.25rem);
-    line-height: 1.08;
-    letter-spacing: -0.015em;
-    color: var(--crema);
-    margin-bottom: 20px;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    font-size: clamp(2.25rem, 7.5vw, 4rem);
+    line-height: 1.02;
+    letter-spacing: -0.022em;
+    color: var(--texto-fuerte);
+    margin-bottom: 24px;
+    max-width: 14ch;
   }
 
   h1 em {
     font-style: italic;
-    color: #F5C9A8;
+    color: var(--terracota);
   }
 
   .hero-lede {
-    font-size: 1.0625rem;
-    line-height: 1.6;
-    color: var(--arena-soft);
+    font-size: 1.125rem;
+    line-height: 1.55;
+    color: var(--texto-suave);
     max-width: 540px;
-    margin-bottom: 32px;
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    margin-bottom: 36px;
   }
 
   /* ─── Buttons ─── */
@@ -526,9 +521,19 @@
   <!-- ─── HERO ─── -->
   <section class="hero">
     <div class="hero-content">
+      <svg class="cordillera-svg" viewBox="0 0 600 90" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <path d="M0,90 L0,68 L40,52 L75,60 L110,45 L150,55 L185,40 L225,52 L265,38 L305,50 L345,32 L385,46 L425,40 L465,55 L505,42 L545,58 L585,46 L600,52 L600,90 Z"
+              fill="#B85C3E" opacity="0.25"/>
+        <path d="M0,90 L0,75 L35,62 L70,72 L120,48 L165,68 L210,45 L260,62 L300,42 L350,56 L390,38 L440,52 L490,46 L540,64 L590,52 L600,58 L600,90 Z"
+              fill="#B85C3E" opacity="0.5"/>
+        <path d="M0,90 L0,82 L30,72 L65,80 L100,68 L140,76 L180,58 L210,42 L235,28 L260,44 L290,55 L325,65 L365,55 L405,72 L445,60 L485,75 L525,65 L565,78 L600,70 L600,90 Z"
+              fill="#B85C3E"/>
+        <path d="M218,42 L235,28 L252,42 L246,40 L235,32 L226,40 Z"
+              fill="#FAF4E8" opacity="0.85"/>
+      </svg>
       <p class="eyebrow">Construcción en seco · Mendoza</p>
       <h1>Construcción en seco, reparaciones y <em>mantenimiento</em>.</h1>
-      <p class="hero-lede">Atendemos toda Mendoza. Presupuesto cerrado, trabajos prolijos y plazos que cumplimos. Sin vueltas.</p>
+      <p class="hero-lede">Atendemos toda Mendoza. Presupuesto cerrado, trabajos prolijos y plazos que cumplimos.</p>
       <div class="btn-row">
         <a href="https://wa.me/5492612339930?text=Hola%2C%20me%20interesa%20consultar%20por%20un%20trabajo." class="btn btn-primary" target="_blank" rel="noopener">
           <svg class="wpp-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -537,7 +542,7 @@
           </svg>
           Hablar por WhatsApp
         </a>
-        <a href="#servicios" class="btn btn-ghost">
+        <a href="#servicios" class="btn btn-secondary">
           Ver servicios
         </a>
       </div>
