@@ -9,8 +9,16 @@ Materiales para producir folletos, cartelería y comunicación impresa.
 | `logo.svg` | Logo principal a color (terracota + texto oscuro). Para fondos claros. |
 | `logo-mono-dark.svg` | Versión monocroma oscura. Para fondos claros sin color de marca. |
 | `logo-mono-light.svg` | Versión monocroma clara. Para fondos oscuros (foto, piedra, etc.). |
-| `paleta.html` | Guía visual de marca — paleta, tipografías, voz, reglas de uso. Abrí en navegador. |
-| `folleto-A4.html` | Folleto bicara A4 listo para imprimir. |
+| `whatsapp-avatar.svg` | Avatar 640×640 para foto de perfil de WhatsApp (versión vectorial). |
+| `whatsapp-avatar.png` | Avatar 640×640 PNG — **este es el que subís a WhatsApp** (WA no acepta SVG). |
+| `paleta.html` / `paleta.pdf` | Guía visual de marca — paleta, tipografías, voz, reglas de uso. |
+| `folleto-A4.html` / `folleto-A4.pdf` | Folleto bicara A4 listo para imprimir. Llevá el PDF a la imprenta. |
+
+## Subir el avatar a WhatsApp Business
+
+1. WhatsApp Business → tu foto de perfil → tocar para cambiar.
+2. Elegir `whatsapp-avatar.png` de la carpeta.
+3. WA lo va a recortar en círculo automáticamente. El diseño está pensado para que las letras CC queden bien centradas dentro del círculo, y el texto "CONSTRUCTORA CUYO" desaparezca con el recorte pero sume identidad si alguien lo descarga.
 
 ## Cómo generar el PDF del folleto
 
