@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#3D2C20">
-<meta name="description" content="Constructora en Mendoza — obra nueva, refacciones y ampliaciones. Oficio, presupuesto claro y dirección técnica de principio a fin.">
-<meta property="og:title" content="Anaya · Construcciones en Mendoza">
-<meta property="og:description" content="Construimos tu casa como si fuera nuestra. Obra nueva, refacciones y ampliaciones en Mendoza.">
+<meta name="description" content="Alto Cuyo — construcción en seco, reparaciones y mantenimiento en Mendoza. Trabajos prolijos, presupuesto cerrado, sin vueltas.">
+<meta property="og:title" content="Alto Cuyo · Construcción en seco en Mendoza">
+<meta property="og:description" content="Construcción en seco, reparaciones y mantenimiento. Atendemos toda Mendoza con presupuesto cerrado y trabajos prolijos.">
 <meta property="og:type" content="website">
-<title>Anaya · Construcciones en Mendoza</title>
+<title>Alto Cuyo · Construcción en seco en Mendoza</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,8 +71,9 @@
   }
 
   .brand-mark {
-    width: 28px;
+    min-width: 32px;
     height: 28px;
+    padding: 0 7px;
     background: var(--terracota);
     border-radius: 6px;
     display: grid;
@@ -80,8 +81,9 @@
     color: var(--crema);
     font-family: 'Fraunces', Georgia, serif;
     font-weight: 600;
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     line-height: 1;
+    letter-spacing: 0.04em;
   }
 
   .location {
@@ -102,58 +104,68 @@
 
   /* ─── Hero ─── */
   .hero {
-    padding: 40px 0 64px;
     position: relative;
     overflow: hidden;
-  }
-
-  .andes {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 900px;
-    height: 120px;
-    opacity: 0.18;
-    pointer-events: none;
+    min-height: 540px;
+    display: flex;
+    align-items: flex-end;
+    color: var(--crema);
+    /* Background photo of the Andes, with a gradient overlay so the text
+       stays legible. The overlay graduates from translucent at the top
+       (lets the peaks breathe) to dark terracota at the bottom (where the
+       copy sits). */
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(43, 35, 28, 0.15) 0%,
+        rgba(43, 35, 28, 0.55) 55%,
+        rgba(43, 35, 28, 0.85) 100%
+      ),
+      url('img/cordillera.jpg') center/cover no-repeat;
+    margin: 0 -24px;
+    padding: 80px 24px 56px;
   }
 
   .hero-content {
     position: relative;
     z-index: 1;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
   }
 
   .eyebrow {
     font-size: 0.8125rem;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--terracota);
+    letter-spacing: 0.18em;
+    color: var(--arena);
     margin-bottom: 20px;
   }
 
   h1 {
     font-family: 'Fraunces', Georgia, serif;
     font-weight: 500;
-    font-size: clamp(2rem, 6vw, 3rem);
-    line-height: 1.1;
+    font-size: clamp(2rem, 6.5vw, 3.25rem);
+    line-height: 1.08;
     letter-spacing: -0.015em;
-    color: var(--texto-fuerte);
+    color: var(--crema);
     margin-bottom: 20px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
   }
 
   h1 em {
     font-style: italic;
-    color: var(--terracota);
+    color: #F5C9A8;
   }
 
   .hero-lede {
     font-size: 1.0625rem;
     line-height: 1.6;
-    color: var(--texto-suave);
+    color: var(--arena-soft);
     max-width: 540px;
     margin-bottom: 32px;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
   }
 
   /* ─── Buttons ─── */
@@ -204,6 +216,19 @@
     color: var(--terracota);
   }
 
+  /* Ghost variant for use over the dark hero photo */
+  .btn-ghost {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--crema);
+    border-color: rgba(250, 244, 232, 0.35);
+    backdrop-filter: blur(4px);
+  }
+
+  .btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.16);
+    border-color: var(--arena);
+  }
+
   .wpp-icon {
     width: 20px;
     height: 20px;
@@ -249,11 +274,11 @@
   /* ─── Services grid ─── */
   .services {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
   }
 
-  @media (max-width: 540px) {
+  @media (max-width: 720px) {
     .services { grid-template-columns: 1fr; }
   }
 
@@ -487,8 +512,8 @@
 
 <header class="topbar">
   <a href="#" class="brand">
-    <span class="brand-mark">A</span>
-    <span>Anaya</span>
+    <span class="brand-mark">AC</span>
+    <span>Alto Cuyo</span>
   </a>
   <span class="location">
     <span class="location-dot"></span>
@@ -500,24 +525,19 @@
 
   <!-- ─── HERO ─── -->
   <section class="hero">
-    <svg class="andes" viewBox="0 0 900 120" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0,120 L0,80 L80,40 L140,70 L220,20 L300,55 L380,15 L460,50 L540,25 L620,65 L700,30 L780,60 L860,35 L900,55 L900,120 Z" fill="#5A6B3D" opacity="0.4"/>
-      <path d="M0,120 L0,90 L60,70 L140,95 L220,60 L300,80 L380,55 L460,75 L540,50 L620,80 L700,60 L780,85 L860,65 L900,80 L900,120 Z" fill="#B85C3E" opacity="0.3"/>
-    </svg>
-
-    <div class="wrap hero-content">
-      <p class="eyebrow">Construcción · Mendoza</p>
-      <h1>Construimos tu casa como si <em>fuera nuestra</em>.</h1>
-      <p class="hero-lede">Obra nueva, refacciones y ampliaciones en Mendoza. Oficio de barrio, presupuesto claro y dirección técnica de principio a fin.</p>
+    <div class="hero-content">
+      <p class="eyebrow">Construcción en seco · Mendoza</p>
+      <h1>Construcción en seco, reparaciones y <em>mantenimiento</em>.</h1>
+      <p class="hero-lede">Atendemos toda Mendoza. Presupuesto cerrado, trabajos prolijos y plazos que cumplimos. Sin vueltas.</p>
       <div class="btn-row">
-        <a href="https://wa.me/5492612339930?text=Hola%2C%20me%20interesa%20consultar%20por%20una%20obra." class="btn btn-primary" target="_blank" rel="noopener">
+        <a href="https://wa.me/5492612339930?text=Hola%2C%20me%20interesa%20consultar%20por%20un%20trabajo." class="btn btn-primary" target="_blank" rel="noopener">
           <svg class="wpp-icon" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.7-1.6-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5 0 1.5 1.1 2.9 1.3 3.1.2.2 2.2 3.4 5.4 4.7.7.3 1.3.5 1.8.7.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/>
             <path d="M20.5 3.5C18.3 1.3 15.3 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.7 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.3-1.3-6.3-3.5-8.4zM12 22c-1.8 0-3.6-.5-5.2-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.6 15.7 2 13.9 2 12 2 6.5 6.5 2 12 2c2.7 0 5.2 1 7.1 2.9 1.9 1.9 2.9 4.4 2.9 7.1 0 5.5-4.5 10-10 10z"/>
           </svg>
           Hablar por WhatsApp
         </a>
-        <a href="#servicios" class="btn btn-secondary">
+        <a href="#servicios" class="btn btn-ghost">
           Ver servicios
         </a>
       </div>
@@ -528,18 +548,18 @@
   <section class="section" id="servicios">
     <div class="wrap">
       <p class="section-label">Qué hacemos</p>
-      <h2>Construcción a medida, de principio a fin.</h2>
-      <p class="section-lede">Trabajamos con familias, comerciantes y profesionales que quieren una obra bien hecha, sin sorpresas en el camino.</p>
+      <h2>Tres rubros, hechos prolijos.</h2>
+      <p class="section-lede">Atendemos casas, locales y oficinas en todo el Gran Mendoza. Lo que entra, lo terminamos.</p>
 
       <div class="services">
         <article class="service">
           <div class="service-icon">
             <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-7h6v7"/>
+              <path d="M4 21V8l8-5 8 5v13M4 13h16M8 21V13M16 21V13M12 21v-4"/>
             </svg>
           </div>
-          <h3 class="service-title">Obra nueva</h3>
-          <p class="service-body">Viviendas unifamiliares y locales comerciales desde los planos hasta la entrega de llaves.</p>
+          <h3 class="service-title">Construcción en seco</h3>
+          <p class="service-body">Steel framing, durlock, cielorrasos y divisiones. Más rápido, sin polvo y con menos lío que la obra húmeda.</p>
         </article>
 
         <article class="service">
@@ -548,28 +568,18 @@
               <path d="M14.7 6.3l3 3M3 21l4-1 11-11-3-3L4 17l-1 4zM18 6l3-3 3 3-3 3-3-3z"/>
             </svg>
           </div>
-          <h3 class="service-title">Refacciones</h3>
-          <p class="service-body">Cocinas, baños, pisos, techos y revoques. Renovamos espacios sin desarmar tu vida.</p>
+          <h3 class="service-title">Reparaciones</h3>
+          <p class="service-body">Filtraciones, fisuras, humedades, techos y goteras. Atendemos urgencias en el día.</p>
         </article>
 
         <article class="service">
           <div class="service-icon">
             <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 12h7V5H3v7zM14 19h7v-7h-7v7zM3 19h7v-4H3v4zM14 12h7V5h-7v7z"/>
+              <path d="M14 6l-4 4-2-2-5 5v5h5l5-5-2-2 4-4M16 4l4 4M14 6l6-6 4 4-6 6"/>
             </svg>
           </div>
-          <h3 class="service-title">Ampliaciones</h3>
-          <p class="service-body">Sumamos metros donde los necesitás — un cuarto, una galería, un local en el frente.</p>
-        </article>
-
-        <article class="service">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
-            </svg>
-          </div>
-          <h3 class="service-title">Dirección técnica</h3>
-          <p class="service-body">Te acompañamos en la planificación, los permisos municipales y el seguimiento de la obra.</p>
+          <h3 class="service-title">Mantenimiento</h3>
+          <p class="service-body">Pintura, plomería, electricidad menor y herrería. Lo que tu casa o local necesite, lo dejamos andando.</p>
         </article>
       </div>
     </div>
@@ -584,20 +594,20 @@
       <ol class="process-list">
         <li class="process-item">
           <div>
-            <h3 class="process-title">Visita y charla</h3>
-            <p class="process-body">Vamos al lugar, escuchamos qué necesitás y miramos qué se puede hacer. Sin compromiso.</p>
+            <h3 class="process-title">Vamos a verlo</h3>
+            <p class="process-body">Pasamos por el lugar, miramos qué necesitás y te decimos qué hacemos. Visita sin cargo.</p>
           </div>
         </li>
         <li class="process-item">
           <div>
-            <h3 class="process-title">Presupuesto claro</h3>
-            <p class="process-body">Te entregamos un presupuesto detallado por escrito — materiales, mano de obra y plazos. Lo que te decimos es lo que pagás.</p>
+            <h3 class="process-title">Presupuesto cerrado</h3>
+            <p class="process-body">Te pasamos por escrito materiales, mano de obra y plazos. Lo que te decimos es lo que pagás. Nada de extras a último momento.</p>
           </div>
         </li>
         <li class="process-item">
           <div>
-            <h3 class="process-title">Obra y entrega</h3>
-            <p class="process-body">Arrancamos la obra con cronograma firmado, te mantenemos al tanto cada semana y entregamos cuando dijimos.</p>
+            <h3 class="process-title">Arrancamos y entregamos</h3>
+            <p class="process-body">Cronograma firmado, novedades cada semana y entrega en la fecha pactada. Lo dejamos terminado.</p>
           </div>
         </li>
       </ol>
@@ -612,8 +622,8 @@
         <p class="trust-label">años de oficio</p>
       </div>
       <div>
-        <p class="trust-stat">+80</p>
-        <p class="trust-label">obras entregadas</p>
+        <p class="trust-stat">+200</p>
+        <p class="trust-label">trabajos hechos</p>
       </div>
       <div>
         <p class="trust-stat">100%</p>
@@ -626,9 +636,9 @@
   <section class="section">
     <div class="wrap">
       <div class="cta-final">
-        <h2>¿Tenés una obra en mente?</h2>
-        <p>Contanos por WhatsApp qué querés hacer. Te respondemos el mismo día con una primera estimación.</p>
-        <a href="https://wa.me/5492612339930?text=Hola%2C%20me%20interesa%20consultar%20por%20una%20obra." class="btn btn-primary" target="_blank" rel="noopener">
+        <h2>¿Tenés un trabajo en mente?</h2>
+        <p>Contanos por WhatsApp qué necesitás. Te respondemos el mismo día con una primera estimación.</p>
+        <a href="https://wa.me/5492612339930?text=Hola%2C%20me%20interesa%20consultar%20por%20un%20trabajo." class="btn btn-primary" target="_blank" rel="noopener">
           <svg class="wpp-icon" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.7-1.6-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5 0 1.5 1.1 2.9 1.3 3.1.2.2 2.2 3.4 5.4 4.7.7.3 1.3.5 1.8.7.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/>
             <path d="M20.5 3.5C18.3 1.3 15.3 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.7 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.3-1.3-6.3-3.5-8.4zM12 22c-1.8 0-3.6-.5-5.2-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.6 15.7 2 13.9 2 12 2 6.5 6.5 2 12 2c2.7 0 5.2 1 7.1 2.9 1.9 1.9 2.9 4.4 2.9 7.1 0 5.5-4.5 10-10 10z"/>
@@ -643,7 +653,7 @@
 
 <footer>
   <div class="wrap">
-    <p class="footer-brand">Anaya · Construcciones</p>
+    <p class="footer-brand">Alto Cuyo · Construcciones</p>
     <p class="footer-note">
       Mendoza, Argentina ·
       <a href="https://wa.me/5492612339930" class="footer-wpp" target="_blank" rel="noopener">+54 9 261 233 9930</a>
@@ -652,7 +662,7 @@
 </footer>
 
 <!-- WhatsApp FAB (mobile only) -->
-<a href="https://wa.me/5492612339930?text=Hola%2C%20me%20interesa%20consultar%20por%20una%20obra." class="fab" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">
+<a href="https://wa.me/5492612339930?text=Hola%2C%20me%20interesa%20consultar%20por%20un%20trabajo." class="fab" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">
   <svg viewBox="0 0 24 24" aria-hidden="true">
     <path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.7-1.6-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5 0 1.5 1.1 2.9 1.3 3.1.2.2 2.2 3.4 5.4 4.7.7.3 1.3.5 1.8.7.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/>
     <path d="M20.5 3.5C18.3 1.3 15.3 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.7 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.3-1.3-6.3-3.5-8.4zM12 22c-1.8 0-3.6-.5-5.2-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.6 15.7 2 13.9 2 12 2 6.5 6.5 2 12 2c2.7 0 5.2 1 7.1 2.9 1.9 1.9 2.9 4.4 2.9 7.1 0 5.5-4.5 10-10 10z"/>

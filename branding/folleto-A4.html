@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<title>Folleto Alto Cuyo · A4 print-ready</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* Print spec: A4 (210 × 297 mm), bicara, márgenes 12mm de seguridad.
+     Para enviar a imprenta: abrir en Chrome → Ctrl+P → "Guardar como PDF" →
+     escala 100%, sin márgenes adicionales del navegador, fondos sí. */
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  :root {
+    --terracota: #B85C3E;
+    --terracota-dark: #8E4327;
+    --arena: #E8D7BE;
+    --arena-soft: #F2E6D2;
+    --crema: #FAF4E8;
+    --vid: #5A6B3D;
+    --piedra: #4A4239;
+    --texto-fuerte: #2B231C;
+    --texto-suave: #5B4F44;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--texto-fuerte);
+    background: #cccccc;
+    line-height: 1.5;
+  }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    background: var(--crema);
+    margin: 12mm auto;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    page-break-after: always;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page:last-child { page-break-after: auto; }
+
+  @media print {
+    body { background: none; }
+    .page { margin: 0; box-shadow: none; }
+  }
+
+  /* ─── CARA 1 — Tapa con foto Aconcagua ─── */
+  .cover-photo {
+    height: 165mm;
+    background: linear-gradient(
+      to bottom,
+      rgba(43, 35, 28, 0.05) 0%,
+      rgba(43, 35, 28, 0.4) 60%,
+      rgba(43, 35, 28, 0.82) 100%
+    ),
+    url('../img/cordillera.jpg') center/cover no-repeat;
+    color: var(--crema);
+    padding: 14mm 16mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .cover-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 16pt;
+    letter-spacing: -0.01em;
+    color: var(--crema);
+  }
+
+  .cover-mono {
+    min-width: 11mm;
+    height: 10mm;
+    padding: 0 2.5mm;
+    background: var(--terracota);
+    border-radius: 2mm;
+    display: grid;
+    place-items: center;
+    color: var(--crema);
+    font-size: 11pt;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  .cover-headline {
+    max-width: 130mm;
+  }
+
+  .cover-eyebrow {
+    font-size: 9pt;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--arena);
+    margin-bottom: 6mm;
+  }
+
+  .cover-headline h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 36pt;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: var(--crema);
+    margin-bottom: 6mm;
+    text-shadow: 0 1mm 4mm rgba(0,0,0,0.3);
+  }
+
+  .cover-headline h1 em {
+    font-style: italic;
+    color: #F5C9A8;
+  }
+
+  .cover-lede {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: var(--arena-soft);
+    max-width: 110mm;
+  }
+
+  /* Tapa — banda inferior con WhatsApp */
+  .cover-cta {
+    height: 132mm;
+    padding: 12mm 16mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8mm;
+  }
+
+  .cover-cta h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 24pt;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--texto-fuerte);
+    max-width: 150mm;
+  }
+
+  .cover-cta h2 em {
+    font-style: italic;
+    color: var(--terracota);
+  }
+
+  .cover-cta p {
+    font-size: 11pt;
+    color: var(--texto-suave);
+    max-width: 145mm;
+  }
+
+  .wpp-button {
+    background: var(--terracota);
+    color: var(--crema);
+    padding: 4mm 7mm;
+    border-radius: 3mm;
+    font-weight: 500;
+    font-size: 13pt;
+    display: inline-flex;
+    align-items: center;
+    gap: 3mm;
+  }
+
+  .wpp-button .ico {
+    width: 5mm;
+    height: 5mm;
+    background: currentColor;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M20.5 3.5C18.3 1.3 15.3 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.7 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.3-1.3-6.3-3.5-8.4z'/></svg>") no-repeat center/contain;
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M20.5 3.5C18.3 1.3 15.3 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.7 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.3-1.3-6.3-3.5-8.4z'/></svg>") no-repeat center/contain;
+  }
+
+  .cover-contact {
+    font-size: 10pt;
+    color: var(--texto-suave);
+    margin-top: 2mm;
+  }
+
+  .cover-contact strong {
+    color: var(--texto-fuerte);
+    font-weight: 500;
+  }
+
+  /* ─── CARA 2 — Servicios + proceso + trust ─── */
+  .back {
+    padding: 14mm 16mm;
+    display: flex;
+    flex-direction: column;
+    gap: 8mm;
+  }
+
+  .back-header {
+    border-bottom: 0.5mm solid rgba(43, 35, 28, 0.15);
+    padding-bottom: 6mm;
+    margin-bottom: 2mm;
+  }
+
+  .back-label {
+    font-size: 9pt;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--terracota);
+    margin-bottom: 3mm;
+  }
+
+  .back-header h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 22pt;
+    line-height: 1.1;
+    color: var(--texto-fuerte);
+  }
+
+  /* Servicios grid */
+  .services-print {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4mm;
+  }
+
+  .service-print {
+    background: var(--arena-soft);
+    border-radius: 3mm;
+    padding: 6mm 5mm;
+  }
+
+  .service-print-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 13pt;
+    margin-bottom: 2mm;
+    color: var(--texto-fuerte);
+  }
+
+  .service-print-body {
+    font-size: 9pt;
+    color: var(--texto-suave);
+    line-height: 1.45;
+  }
+
+  /* Proceso */
+  .process-print {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4mm;
+  }
+
+  .step {
+    border-left: 0.8mm solid var(--terracota);
+    padding-left: 4mm;
+  }
+
+  .step-number {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 14pt;
+    color: var(--terracota);
+    line-height: 1;
+    margin-bottom: 2mm;
+  }
+
+  .step-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 12pt;
+    color: var(--texto-fuerte);
+    margin-bottom: 1mm;
+  }
+
+  .step-body {
+    font-size: 8.5pt;
+    color: var(--texto-suave);
+    line-height: 1.4;
+  }
+
+  /* Trust strip */
+  .trust-print {
+    background: var(--piedra);
+    color: var(--arena);
+    border-radius: 3mm;
+    padding: 7mm 6mm;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4mm;
+    text-align: center;
+  }
+
+  .trust-print-stat {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 22pt;
+    color: var(--crema);
+    line-height: 1;
+    margin-bottom: 1mm;
+  }
+
+  .trust-print-label {
+    font-size: 8.5pt;
+    opacity: 0.85;
+  }
+
+  /* Footer contact */
+  .back-footer {
+    background: var(--arena);
+    border-radius: 3mm;
+    padding: 7mm 6mm;
+    text-align: center;
+    margin-top: auto;
+  }
+
+  .back-footer-headline {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 16pt;
+    color: var(--texto-fuerte);
+    margin-bottom: 2mm;
+  }
+
+  .back-footer-wpp {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 18pt;
+    color: var(--terracota);
+    margin: 2mm 0;
+  }
+
+  .back-footer-detail {
+    font-size: 9pt;
+    color: var(--texto-suave);
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ CARA 1 ═══════════════════ -->
+<div class="page">
+  <div class="cover-photo">
+    <div class="cover-brand">
+      <span class="cover-mono">AC</span>
+      <span>Alto Cuyo</span>
+    </div>
+
+    <div class="cover-headline">
+      <p class="cover-eyebrow">Construcción en seco · Mendoza</p>
+      <h1>Construcción en seco, reparaciones y <em>mantenimiento</em>.</h1>
+      <p class="cover-lede">Atendemos toda Mendoza. Presupuesto cerrado, trabajos prolijos y plazos que cumplimos. Sin vueltas.</p>
+    </div>
+  </div>
+
+  <div class="cover-cta">
+    <h2>¿Tenés un trabajo <em>en mente</em>?</h2>
+    <p>Contanos por WhatsApp qué necesitás. Te respondemos el mismo día con una primera estimación.</p>
+    <div class="wpp-button">
+      <span class="ico"></span>
+      WhatsApp +54 9 261 233 9930
+    </div>
+    <p class="cover-contact">
+      <strong>Alto Cuyo · Construcciones</strong> · Mendoza, Argentina
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════ CARA 2 ═══════════════════ -->
+<div class="page">
+  <div class="back">
+    <header class="back-header">
+      <p class="back-label">Qué hacemos</p>
+      <h2>Tres rubros, hechos prolijos.</h2>
+    </header>
+
+    <div class="services-print">
+      <article class="service-print">
+        <h3 class="service-print-title">Construcción en seco</h3>
+        <p class="service-print-body">Steel framing, durlock, cielorrasos y divisiones. Más rápido, sin polvo y con menos lío que la obra húmeda.</p>
+      </article>
+      <article class="service-print">
+        <h3 class="service-print-title">Reparaciones</h3>
+        <p class="service-print-body">Filtraciones, fisuras, humedades, techos y goteras. Atendemos urgencias en el día.</p>
+      </article>
+      <article class="service-print">
+        <h3 class="service-print-title">Mantenimiento</h3>
+        <p class="service-print-body">Pintura, plomería, electricidad menor y herrería. Lo que tu casa o local necesite, lo dejamos andando.</p>
+      </article>
+    </div>
+
+    <header class="back-header" style="margin-top: 4mm;">
+      <p class="back-label">Cómo trabajamos</p>
+      <h2>Tres pasos, sin vueltas.</h2>
+    </header>
+
+    <div class="process-print">
+      <div class="step">
+        <p class="step-number">01</p>
+        <p class="step-title">Vamos a verlo</p>
+        <p class="step-body">Pasamos por el lugar, miramos qué necesitás y te decimos qué hacemos. Visita sin cargo.</p>
+      </div>
+      <div class="step">
+        <p class="step-number">02</p>
+        <p class="step-title">Presupuesto cerrado</p>
+        <p class="step-body">Por escrito: materiales, mano de obra y plazos. Lo que decimos es lo que pagás.</p>
+      </div>
+      <div class="step">
+        <p class="step-number">03</p>
+        <p class="step-title">Arrancamos y entregamos</p>
+        <p class="step-body">Cronograma firmado, novedades cada semana y entrega en la fecha pactada.</p>
+      </div>
+    </div>
+
+    <div class="trust-print">
+      <div>
+        <p class="trust-print-stat">+15</p>
+        <p class="trust-print-label">años de oficio</p>
+      </div>
+      <div>
+        <p class="trust-print-stat">+200</p>
+        <p class="trust-print-label">trabajos hechos</p>
+      </div>
+      <div>
+        <p class="trust-print-stat">100%</p>
+        <p class="trust-print-label">presupuesto cerrado</p>
+      </div>
+    </div>
+
+    <div class="back-footer">
+      <p class="back-footer-headline">Te respondemos hoy mismo</p>
+      <p class="back-footer-wpp">+54 9 261 233 9930</p>
+      <p class="back-footer-detail">Alto Cuyo · Construcciones · Mendoza, Argentina</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

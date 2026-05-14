@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alto Cuyo · Guía de marca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --terracota: #B85C3E;
+    --terracota-dark: #8E4327;
+    --arena: #E8D7BE;
+    --arena-soft: #F2E6D2;
+    --crema: #FAF4E8;
+    --vid: #5A6B3D;
+    --piedra: #4A4239;
+    --texto-fuerte: #2B231C;
+    --texto-suave: #5B4F44;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: var(--crema);
+    color: var(--texto-fuerte);
+    line-height: 1.55;
+    padding: 48px 24px;
+  }
+
+  .wrap { max-width: 880px; margin: 0 auto; }
+
+  h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 2.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    color: var(--texto-suave);
+    margin-bottom: 48px;
+  }
+
+  h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 40px 0 16px;
+    border-bottom: 1px solid rgba(43, 35, 28, 0.12);
+    padding-bottom: 8px;
+  }
+
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .sw {
+    border-radius: 12px;
+    border: 1px solid rgba(43, 35, 28, 0.08);
+    overflow: hidden;
+  }
+
+  .sw-color {
+    height: 96px;
+  }
+
+  .sw-meta {
+    padding: 12px 14px;
+    background: white;
+  }
+
+  .sw-name {
+    font-weight: 500;
+    font-size: 0.9375rem;
+    margin-bottom: 2px;
+  }
+
+  .sw-hex {
+    font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+    font-size: 0.8125rem;
+    color: var(--texto-suave);
+  }
+
+  .sw-usage {
+    font-size: 0.8125rem;
+    color: var(--texto-suave);
+    margin-top: 4px;
+  }
+
+  .type-row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 24px;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(43, 35, 28, 0.08);
+  }
+
+  .type-row:last-child { border-bottom: none; }
+
+  .type-meta {
+    font-size: 0.8125rem;
+    color: var(--texto-suave);
+    line-height: 1.5;
+  }
+
+  .type-meta strong {
+    display: block;
+    color: var(--texto-fuerte);
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .type-display { font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 2.25rem; line-height: 1.1; }
+  .type-display em { font-style: italic; color: var(--terracota); }
+
+  .type-h2 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 1.75rem; }
+  .type-body { font-family: 'DM Sans', sans-serif; font-size: 1rem; max-width: 520px; }
+  .type-label { font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.15em; color: var(--terracota); }
+
+  .logo-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 600px) {
+    .logo-row { grid-template-columns: 1fr; }
+  }
+
+  .logo-box {
+    border-radius: 12px;
+    padding: 32px 24px;
+    text-align: center;
+    border: 1px solid rgba(43, 35, 28, 0.08);
+  }
+
+  .logo-box.on-light { background: var(--crema); }
+  .logo-box.on-dark  { background: var(--piedra); }
+
+  .logo-box img { max-width: 100%; height: auto; }
+
+  .logo-caption {
+    font-size: 0.8125rem;
+    color: var(--texto-suave);
+    margin-top: 12px;
+  }
+
+  .voice {
+    background: var(--arena-soft);
+    border-radius: 12px;
+    padding: 24px 28px;
+    line-height: 1.7;
+  }
+
+  .voice ul { padding-left: 20px; }
+  .voice li { margin-bottom: 6px; }
+  .voice strong { color: var(--texto-fuerte); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Alto Cuyo · Guía de marca</h1>
+  <p class="subtitle">Construcciones · Mendoza · v1.0</p>
+
+  <h2>Logo</h2>
+  <div class="logo-row">
+    <div class="logo-box on-light">
+      <img src="logo.svg" alt="Logo Alto Cuyo color">
+      <p class="logo-caption">Principal · sobre fondo claro</p>
+    </div>
+    <div class="logo-box on-dark">
+      <img src="logo-mono-light.svg" alt="Logo Alto Cuyo mono claro">
+      <p class="logo-caption">Mono claro · sobre fondo oscuro</p>
+    </div>
+  </div>
+
+  <h2>Paleta</h2>
+  <div class="swatches">
+    <div class="sw">
+      <div class="sw-color" style="background: #B85C3E;"></div>
+      <div class="sw-meta">
+        <p class="sw-name">Terracota</p>
+        <p class="sw-hex">#B85C3E</p>
+        <p class="sw-usage">Color principal — CTAs, monograma, acentos</p>
+      </div>
+    </div>
+    <div class="sw">
+      <div class="sw-color" style="background: #8E4327;"></div>
+      <div class="sw-meta">
+        <p class="sw-name">Terracota oscuro</p>
+        <p class="sw-hex">#8E4327</p>
+        <p class="sw-usage">Hover de botones, énfasis</p>
+      </div>
+    </div>
+    <div class="sw">
+      <div class="sw-color" style="background: #E8D7BE;"></div>
+      <div class="sw-meta">
+        <p class="sw-name">Arena</p>
+        <p class="sw-hex">#E8D7BE</p>
+        <p class="sw-usage">Fondos secundarios, cards</p>
+      </div>
+    </div>
+    <div class="sw">
+      <div class="sw-color" style="background: #FAF4E8;"></div>
+      <div class="sw-meta">
+        <p class="sw-name">Crema</p>
+        <p class="sw-hex">#FAF4E8</p>
+        <p class="sw-usage">Fondo principal del sitio y folletos</p>
+      </div>
+    </div>
+    <div class="sw">
+      <div class="sw-color" style="background: #5A6B3D;"></div>
+      <div class="sw-meta">
+        <p class="sw-name">Vid</p>
+        <p class="sw-hex">#5A6B3D</p>
+        <p class="sw-usage">Acento secundario, ilustraciones</p>
+      </div>
+    </div>
+    <div class="sw">
+      <div class="sw-color" style="background: #4A4239;"></div>
+      <div class="sw-meta">
+        <p class="sw-name">Piedra</p>
+        <p class="sw-hex">#4A4239;</p>
+        <p class="sw-usage">Trust strip, footers oscuros</p>
+      </div>
+    </div>
+    <div class="sw">
+      <div class="sw-color" style="background: #2B231C;"></div>
+      <div class="sw-meta">
+        <p class="sw-name">Texto fuerte</p>
+        <p class="sw-hex">#2B231C</p>
+        <p class="sw-usage">Títulos, cuerpos sobre fondo claro</p>
+      </div>
+    </div>
+    <div class="sw">
+      <div class="sw-color" style="background: #5B4F44;"></div>
+      <div class="sw-meta">
+        <p class="sw-name">Texto suave</p>
+        <p class="sw-hex">#5B4F44</p>
+        <p class="sw-usage">Cuerpos secundarios, notas</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Tipografías</h2>
+  <div class="type-row">
+    <div class="type-meta">
+      <strong>Fraunces</strong>
+      Serif, 500/600<br>
+      Google Fonts (gratis)
+    </div>
+    <div>
+      <p class="type-display">Construcción <em>en seco</em>.</p>
+      <p class="type-meta" style="margin-top: 8px;">Títulos H1 y H2. Italic en los acentos para suavizar.</p>
+    </div>
+  </div>
+
+  <div class="type-row">
+    <div class="type-meta">
+      <strong>DM Sans</strong>
+      Sans-serif, 400/500/600<br>
+      Google Fonts (gratis)
+    </div>
+    <div>
+      <p class="type-body">Cuerpo del texto, párrafos y descripciones. Buena legibilidad en pantalla y en papel. Funciona para subtítulos, listas y elementos de UI.</p>
+      <p class="type-label" style="margin-top: 12px;">ETIQUETAS Y EYEBROWS · MAYÚSCULAS, 0.15em</p>
+    </div>
+  </div>
+
+  <h2>Voz</h2>
+  <div class="voice">
+    <ul>
+      <li><strong>Crudo, no rústico.</strong> Hablamos como en Mendoza, sin floreo ni corporativo.</li>
+      <li><strong>Operativo.</strong> Decimos qué hacemos, cuánto sale y cuándo entregamos.</li>
+      <li><strong>Sin promesas vacías.</strong> Lo que se promete se entrega.</li>
+      <li><strong>Cercano sin perder oficio.</strong> "Te lo dejamos andando" sí; "te banco" no.</li>
+      <li><strong>Voseo.</strong> Argentinos hablándole a argentinos.</li>
+    </ul>
+  </div>
+
+  <h2>Usar la marca</h2>
+  <div class="voice">
+    <ul>
+      <li>El monograma <strong>AC</strong> siempre en terracota sobre fondo claro, o en crema sobre fondo oscuro.</li>
+      <li>El wordmark <strong>Alto Cuyo</strong> nunca se separa del monograma en piezas principales.</li>
+      <li>Espacio libre alrededor del logo: mínimo igual a la altura de la letra "A" del wordmark.</li>
+      <li>Tamaño mínimo de uso impreso: 24mm de ancho. Más chico que eso se pierde el detalle.</li>
+      <li>No deformar, no rotar, no cambiar la paleta sin consultar.</li>
+    </ul>
+  </div>
+
+</div>
+</body>
+</html>
