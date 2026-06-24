@@ -12,8 +12,11 @@ Materiales para producir folletos, cartelería y comunicación impresa.
 | `whatsapp-avatar.svg` | Avatar 640×640 para foto de perfil de WhatsApp (versión vectorial). |
 | `whatsapp-avatar.png` | Avatar 640×640 PNG — **este es el que subís a WhatsApp** (WA no acepta SVG). |
 | `paleta.html` / `paleta.pdf` | Guía visual de marca — paleta, tipografías, voz, reglas de uso. |
-| `folleto-A4.html` / `folleto-A4.pdf` ⭐ | **Folleto 1 cara A4, sin foto, silueta vectorial.** Pensado para imprimir económico (2 tintas, papel offset). Llevá este PDF. |
+| `folleto-A4.html` / `folleto-A4.pdf` ⭐ | **Folleto 1 cara A4, sin foto, silueta vectorial.** Pensado para imprimir económico (2 tintas, papel offset). Incluye QR a WhatsApp en el CTA. Llevá este PDF. |
 | `folleto-A4-bicara.html` / `folleto-A4-bicara.pdf` | Versión bicara con foto del Aconcagua (más caro de imprimir — full color, 2 caras). Usá si querés tier premium. |
+| `folleto-A6.html` / `folleto-A6.pdf` | Versión reducida A6 (volante de mano). Una sola pieza — sirve de preview del diseño chico. |
+| `folleto-A6-4up.html` / `folleto-A6-4up.pdf` 🔪 | **4 folletos A6 por hoja A4** con guías de corte. Llevá este PDF a la imprenta: imprime 1 A4 y corta en cruz (1 corte vertical + 1 horizontal) → salen 4 volantes. La opción más económica por unidad. |
+| `qr-whatsapp.svg` | QR vectorial que abre el chat de WhatsApp (`wa.me/5492612339930`). Ya va embebido en los folletos; el archivo suelto es para reusar en cartelería. |
 
 ## Subir el avatar a WhatsApp Business
 
